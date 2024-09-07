@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn" onclick="ShowMsg()">click</button>
+
+    <p id="demo">
+
+    </p>
+
+    <script>
+        // function ShowMsg(){
+        //     document.getElementById("demo").innerText="wait 3 second..";
+
+        //     setTimeout(function(){
+        //         document.getElementById("demo").innerText="Hello..";
+        //     },3000);
+
+
+        // }
+
+        function ShowMsg() {
+            document.getElementById("demo").innerText = "wait 3 second..";
+
+            setInterval(function () {
+                var rr = document.getElementById("demo").innerText = "Hello..";
+                console.log(rr)
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

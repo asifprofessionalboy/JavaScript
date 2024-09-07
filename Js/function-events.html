@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+          
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button onclick="displayDate()">Click Here</button> <br> <br>
+
+    <input type="text" onclick="alert(this.value)">
+
+    <input type="text" id="inp" onkeypress="func()">
+
+    <div id="content">
+       
+    </div>
+
+    <script>
+
+    // function displayDate(){
+    //     document.getElementById("content").innerHTML = Date();
+    // }
+
+ 
+    function func() {
+            var inputText = document.querySelector('input[type="text"]').value;
+            
+            document.getElementById("content").innerHTML = inputText;
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    <h1>This is My Clock</h1>
+
+    <h2 id="demo"></h2>
+
+
+
+    <script>
+
+        function NehaClock(){
+                var now = new Date(); // dat and time
+                var hours = now.getHours();  // hours 0 - 23
+                var minutes = now.getMinutes();  // 0 - 59
+                var second = now.getSeconds();
+
+                var ampm = hours >= 12 ? "PM" : "AM";
+
+                if(hours > 12){
+                    hours = hours - 12;
+                }
+
+
+                var timing = hours + ':' + minutes + ':' + second  + " " + ampm
+
+                document.getElementById("demo").innerText = timing;
+        }
+
+            setInterval(NehaClock,1000);
+
+            window.onload = NehaClock;
+
+
+    </script>
+</body>
+</html>

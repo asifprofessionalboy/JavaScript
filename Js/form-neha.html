@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form onsubmit="return NehaValid()">
+
+    Mobile No : 
+    
+    <input type="text" id="mob" name="mobile" id="mobile">
+
+    <!--p id="demo"></p-->
+
+    <button id="btn" type="submit" name="submit">Submit Here</button>
+
+    </form>
+
+
+    <script>
+
+function NehaValid(){
+    
+    var valid = true;
+
+    var phone = document.getElementById("mob").value;
+
+
+    if(phone.trim()===""){
+
+   // document.getElementById("demo").textContent ="Number is required.";
+
+    document.getElementById("demo").style.border = "1px solid red";
+
+      valid=false;
+    }
+
+    else if (!/^\d{10}$/.test(phone))
+    {
+
+       var text = document.getElementById("demo").innerHTML = "Contains number only and 10 digit";
+        
+       text.style.color = "red";
+       
+       valid=false
+    }
+
+    return valid;
+
+}
+    </script>
+
+</body>
+</html>

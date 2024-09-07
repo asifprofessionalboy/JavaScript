@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling</title>
+</head>
+<body>
+    <button id="clickButton">Click Me</button>
+    <p id="display"></p>
+
+    <script>
+        let button = document.getElementById('clickButton');
+        let display = document.getElementById('display');
+
+        function handleClick() {
+            display.textContent = 'Button Clicked!';
+        }
+
+        button.addEventListener('click', handleClick);
+
+        // To remove the event listener
+        // button.removeEventListener('click', handleClick);
+    </script>
+</body>
+</html>

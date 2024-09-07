@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setInterval Example</title>
+</head>
+<body>
+    <button onclick="startCounter()">Start Counter</button>
+    <button onclick="stopCounter()">Stop Counter</button>
+    <p id="counter">0</p>
+
+    <script>
+        //The setInterval function allows you to execute a piece of code repeatedly at specified intervals.
+        let intervalId;
+        let count = 0;
+
+        function startCounter() {
+           
+            intervalId = setInterval(function() {
+                count++;
+                document.getElementById('counter').textContent = count;
+            }, 1000);
+        }
+
+        function stopCounter() {
+            // Use clearInterval to stop the counter
+            clearInterval(intervalId);
+        }
+    </script>
+</body>
+</html>

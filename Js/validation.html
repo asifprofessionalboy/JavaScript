@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 0.875em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+
+
+        <form onsubmit="return validateForm()" onclick="" >
+            <div class="form-row">
+
+
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+
+                   
+                    <input type="text" class="form-control" id="name" name="name" >
+                    <span id="nameError" class="error"></span>
+
+
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="mob">Mobile No.</label>
+                    <input type="text" class="form-control" id="mob" name="mob" placeholder="Mobile No.">
+                    <span id="mobError" class="error"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select class="form-control" id="course" name="course" required>
+                    <option disabled selected>Select Course</option>
+                    <option value="Volvo Training">Web Training</option>
+                    <option value="Haulpak Training">App Training</option>
+                </select>
+                <span id="courseError" class="error"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="msg">Your Message</label>
+                <textarea class="form-control" id="msg"  name="msg" placeholder="Your message"></textarea>
+                <span id="msgError" class="error"></span>
+            </div>
+
+
+
+            <button class="btn btn-primary" name="submit" type="submit">Send Message</button>
+
+
+
+        </form>
+
+    </div>
+
+    <script>
+        function validateForm() {
+
+
+
+            var name = document.getElementById("name").value;
+
+
+
+            
+            var mob = document.getElementById("mob").value;
+            var course = document.getElementById("course").value;
+            var msg = document.getElementById("msg").value;
+
+
+
+            var valid = true;
+
+       
+
+
+
+
+
+
+            if (name.trim() === "") {
+
+                document.getElementById("nameError").innerText = "Name is required.";
+                
+                valid = false;
+
+            } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+
+                document.getElementById("nameError").innerText = "Name must contain only alphabets.";
+               
+                valid = false;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (mob.trim() === "") {
+                document.getElementById("mobError").innerText = "Mobile number is required.";
+                valid = false;
+            } else if (!/^\d{10}$/.test(mob)) {
+                document.getElementById("mobError").innerText = "Mobile number must be 10 digits long and contain only numeric characters.";
+                valid = false;
+            }
+
+            if (course === "Select Course") {
+                document.getElementById("courseError").innerText = "Course name is required.";
+                valid = false;
+            }
+
+            if (msg.trim() === "") {
+                document.getElementById("msgError").innerText = "Message is required.";
+                valid = false;
+            } else if (!/^[a-zA-Z\s]+$/.test(msg)) {
+                document.getElementById("msgError").innerText = "Message must contain only alphabets.";
+                valid = false;
+            }
+
+            return valid;
+        }
+    </script>
+</body>
+</html>

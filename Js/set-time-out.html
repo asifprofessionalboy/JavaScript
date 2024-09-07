@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setTimeout Example</title>
+</head>
+<body>
+    <button onclick="showMessage()">Show Message after 3 seconds</button>
+    <p id="message"></p>
+
+    <script>
+//The setTimeout function allows you to execute a piece of code after a specified delay.
+
+        function showMessage() {
+            // Clear the previous message
+            document.getElementById('message').innerText = 'Wait for it...';
+
+            // Use setTimeout to delay the execution of the function by 3000 milliseconds (3 seconds)
+            setTimeout(function() {
+                document.getElementById('message').innerText = 'Hello, this message is delayed by 3 seconds!';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

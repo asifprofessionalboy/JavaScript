@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+
+    <p id="para">Lorem i
+        psum dolor sit amet 
+        consectetur adipisicing elit. Adipisci, quis.
+    </p>
+<h5>Asif</h5>
+    </div>
+</body>
+
+<script>
+    var newElement = document.createElement("h1");
+    console.log(newElement);
+
+        newElement.className = "text";
+        newElement.id = "txt";
+        newElement.style.cssText="color:red; border:1px solid #000"
+
+    var newText = document.createTextNode("This is text");
+    
+
+     newElement.appendChild(newText);
+
+   document.getElementById("demo").appendChild(newElement);
+
+
+    var target = document.getElementById("demo");
+
+      //  target.insertBefore(newElement,target.childNodes[3]);
+
+      target.parentNode.insertBefore(newElement, target);
+ 
+    
+
+</script>
+</html>

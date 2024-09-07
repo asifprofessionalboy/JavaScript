@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fetchData()">Fetch Data</button>
+    <p id="data"></p>
+
+    <script>
+        async function fetchData() {
+            let response = await fetch('https://jsonplaceholder.typicode.com/todos/');
+            let data = await response.json();
+            document.getElementById('data').innerHTML = JSON.stringify(data);
+        }
+    </script>
+</body>
+</html>
